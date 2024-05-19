@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  background: url(img/fondo.png) no-repeat center;
+  background-size: cover;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+}
+header {
+  background: black;
+  padding: 10px;
+	padding-left: 30px;
+  margin-bottom: 20px;
+  h1 {
+    margin: 0;
+    color: white;
+    font-weight: bolder;
+    font-size: 1rem;
+    margin: -10px;
+    span {
+      font-size: 3rem;
+    }
+  }
+  h2 {
+    margin: 0;
+    color: white;
+    font-weight: bolder;
+  }
+}
+
+main {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  flex-direction: column;
+  display: flex;
+  gap: 30px;
+  /* background-image: url("../img/fondo.png"); */
+  position: relative;
+}
+
+#imagen {
+  width: 200px;
+}
+
+#palabra_a_adivinar {
+  height: 3em;
+}
+
+#palabra_a_adivinar span {
+  vertical-align: bottom;
+  font-size: 2em;
+  border-bottom: 2px solid black;
+  width: 30px;
+  text-align: center;
+  margin-right: 6px;
+  display: inline-block; /* sin esto, por ser un elemento de línea, no tomaría el width */
+}
+
+#letras {
+  position: absolute;
+  right: 50px;
+  top: 10px;
+  width: 330px;
+  height: 150px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+#letras button {
+  width: 28px;
+  padding: 8px 0;
+  text-align: center;
+	font-size: 1.7rem;
+	
+}
+.relative {
+  position: relative;
+  /* background-color: rebeccapurple; */
+}
