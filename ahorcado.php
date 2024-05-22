@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,24 +10,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/styleAhorcado.css" />
     <script src="js/funciones.js"></script>
+    <script src="js/glosario.js"></script>
     <title>Ahorcado</title>
 </head>
+
 <body>
     <header>
         <h2>Ahorcado</h2>
         <?php
         session_start();
-        echo "<h1>Usuario: <span>".$_SESSION['nombre']."</span></h1>";
+        echo "<h1>Usuario: <span>" . $_SESSION['nombre'] . "</span></h1>";
         ?>
+
     </header>
     <main>
-        <img id="imagen" src="img/img0.png" alt="Ahorcado" />
-        <div class="relative">
-            <p id="palabra_a_adivinar"></p>
-            <p id="resultado"></p>
+        <div class="botones">
+            <button id="jugar">
+                <h2>Obtener palabra</h2>
+            </button>
+            <button id="pista">
+                <h2>Obtener pista</h2>
+            </button>
+            <p id="pista_texto" style="visibility: hidden;">Hola mundo</p>
         </div>
-        <div><button id="jugar">Obtener palabra</button> 
-            <button id="pista">Obtener pista</button><p id="pista_texto" style="visibility: hidden;">Hola mundo</p></div>
+        <div class="relative">
+            <h2 id="resultado"></h2>
+            <p id="palabra_a_adivinar"></p>
+
+        </div>
+        <img id="imagen" src="img/img0.png" alt="Ahorcado" />
         <div id="letras">
             <button>A</button>
             <button>B</button>
@@ -59,4 +71,5 @@
     </main>
     <script src="js/ahorcado.js"></script>
 </body>
+
 </html>

@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 body {
   margin: 0;
   background: url(img/fondo.png) no-repeat center;
@@ -5,6 +9,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   min-height: 100vh;
+  background-color: rgb(217, 235, 250);
 }
 header {
   background: black;
@@ -32,10 +37,10 @@ main {
   width: 80%;
   margin: auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.7);
+  background-color: rgb(217, 235, 250);
   flex-direction: column;
   display: flex;
-  gap: 30px;
+  gap: 10px;
   /* background-image: url("../img/fondo.png"); */
   position: relative;
 }
@@ -52,6 +57,15 @@ main {
   vertical-align: bottom;
   font-size: 2em;
   border-bottom: 2px solid black;
+  width: 30px;
+  text-align: center;
+  margin-right: 6px;
+  display: inline-block; /* sin esto, por ser un elemento de línea, no tomaría el width */
+}
+#palabra_a_adivinar i {
+  vertical-align: bottom;
+  font-size: 2em;
+  border-bottom: none;
   width: 30px;
   text-align: center;
   margin-right: 6px;
@@ -80,4 +94,27 @@ main {
 .relative {
   position: relative;
   /* background-color: rebeccapurple; */
+}
+
+#pista_texto{
+  width: 500px;
+}
+.botones{
+  width: 50%;
+  height: 15%;
+}
+#jugar{
+  background-color: blue;
+  color: aliceblue;
+  padding: 5px;
+}
+#pista{
+  background-color: red;
+  color: brown;
+  padding: 5px;
+}
+@media screen and (orientation: portrait) {
+    #letras{
+      position: unset;
+    }
 }

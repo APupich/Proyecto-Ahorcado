@@ -1,20 +1,6 @@
 let palabrita;
 let cant_errores = 0; //cuantas veces me equivoqué
 let cant_aciertos = 0; //cuantas letras acerté
-const palabras = [
-    {
-        palabra: "script",
-        referencia: "secuencia de comandos o “guion” que indica al ordenador las instrucciones que debe realizar"
-    },
-    {
-        palabra: "variable",
-        referencia: "elemento de datos con nombre cuyo valor puede cambiar durante el curso de la ejecución de un programa"
-    },
-    {
-        palabra: "pseudocodigo",
-        referencia: "forma de representar código, como algoritmos, funciones y otros procesos, utilizando una combinación de lenguaje natural"
-    }
-];
 
 
 const btn = id('jugar');
@@ -27,15 +13,20 @@ const btn_letras = document.querySelectorAll( "#letras button" );
 /* click en iniciar juego */
 btn.addEventListener('click', iniciar );
 btn_pista.addEventListener('click', obtener_pista );
+btn_pista.disabled = true;
 
 function obtener_pista(event) {
     pista.style.visibility = 'visible';
-    btn_letras.disabled = true;
+    btn_pista.disabled = true;
+    btn_pista.style.color = "brown";
 }
 
 function iniciar(event){
+    btn_pista.disabled = false;
+    btn_pista.style.color = "aliceblue";
     imagen.src = 'img/img0.png';
     btn.disabled = true;
+    btn.style.color = "rgb(49, 50, 252)";
     id('resultado').innerHTML = "";
     cant_errores = 0;
     cant_aciertos = 0; 
@@ -44,6 +35,7 @@ function iniciar(event){
     parrafo.innerHTML = ''; 
 
     const cant_palabras = palabras.length;
+    
     const valor_al_azar = obtener_random( 0, cant_palabras );
 
     palabrita = palabras[ valor_al_azar ];
@@ -95,13 +87,13 @@ function click_letras(event){
     }
 
     if( cant_errores == 7 ){
-        id('resultado').innerHTML ="Perdiste, la palabra era " + palabrita.palabra;
+        id('resultado').innerHTML ="Perdiste, la palabra era " + palabrita.palabra + ", Obten otra palabra";
         game_over( );
     }else if( cant_aciertos == palabrita.palabra.length ){
-        id('resultado').innerHTML = "GANASTE!! WIIIIII";
+        id('resultado').innerHTML = "GANASTE!!";
         game_over( );
     }
-    console.log( "la letra " + letra + " en la palabra " + palabra + " ¿existe?: " + acerto );
+
 }
 /* fin del juego */
 function game_over( ){
@@ -109,6 +101,7 @@ function game_over( ){
         btn_letras[ i ].disabled = true;
     }
     btn.disabled = false;
+    btn.style.color = "aliceblue";
 }
 
 game_over( );
